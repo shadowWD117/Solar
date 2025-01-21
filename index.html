@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Earth and Moon Visualization</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      overflow: hidden;
+      background-image: url('angkasa.gif');
+      background-size: cover;
+      background-position: center;
+    }
+
+    #container {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 300px; /* Diameter orbit */
+      height: 300px;
+    }
+
+    #orbitbulan {
+      width: 300px;
+      height: 300px;
+      border-radius: 50%;
+      box-shadow: 0 0 5px silver;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+
+    #bumi {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      box-shadow: 0 0 5px cyan;
+      background-image: url('bumi2.jpeg');
+      background-size: cover;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      animation: bumi 30s linear infinite;
+    }
+
+    @keyframes bumi {
+      0% {
+        transform: translate(-50%, -50%) rotate(0deg);
+      }
+      100% {
+        transform: translate(-50%, -50%) rotate(-360deg);
+      }
+    }
+
+    #bulan {
+      width: 25px;
+      height: 25px;
+      border-radius: 50%;
+      box-shadow: 0 0 2px silver;
+      background-image: url('bulan.jpeg');
+      background-size: cover;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      animation: bulan 10s linear infinite;
+    }
+
+    @keyframes bulan {
+      0% {
+        transform: translate(-50%, -50%) rotate(0deg) translate(150px) rotate(0deg);
+      }
+      100% {
+        transform: translate(-50%, -50%) rotate(360deg) translate(150px) rotate(-360deg);
+      }
+    }
+
+#bumket {
+    display: none;
+    width: 95%;
+    height: 0%; /* Sesuai dengan animasi */
+    text-align: center;
+    color: white;
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    border: 1px solid white;
+    padding: 10px;
+    overflow: auto; /* Scroll muncul hanya jika diperlukan */
+}
+
+@keyframes buman {
+    0% {
+        height: 0%;
+        opacity: 0;
+    }
+    100% {
+        height: 40%;
+        opacity: 1;
+    }
+}
+
+@keyframes bumano {
+    0% {
+        height: 40%;
+        opacity: 1;
+    }
+    100% {
+        height: 0%;
+        opacity: 0;
+    }
+}
+
+#bulket {
+    display: none;
+    width: 95%;
+    height: 0%; /* Sesuai dengan animasi */
+    text-align: center;
+    color: white;
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    border: 1px solid white;
+    padding: 10px;
+    overflow: auto; /* Scroll muncul hanya jika diperlukan */
+}
+
+@keyframes bumlan {
+    0% {
+        height: 0%;
+        opacity: 0;
+    }
+    100% {
+        height: 40%;
+        opacity: 1;
+    }
+}
+
+@keyframes bumlano {
+    0% {
+        height: 40%;
+        opacity: 1;
+    }
+    100% {
+        height: 0%;
+        opacity: 0;
+    }
+}
+
+  </style>
+</head>
+<body>
+  <div id="container">
+    <div id="orbitbulan">
+      <div id="bulan"></div>
+    </div>
+    <div id="bumi"></div>
+  </div>
+  <div id="bumket">
+    <p> BUMI <br />Bumi adalah planet ketiga dari matahari dan planet terbesar kelima dalam tata surya.
+Bumi adalah satu-satunya planet yang diketahui dapat dihuni oleh berbagai jenis makhluk hidup. 
+Bumi memiliki atmosfer yang memungkinkan makhluk hidup dapat tinggal. Atmosfer Bumi terdiri dari 78% nitrogen, 21% oksigen, dan 1% gas lainnya. 
+Bumi memiliki satelit alami yang disebut dengan bulan. 
+Bumi memiliki medan magnet yang sangat kuat. 
+Bumi memiliki empat musim yang berbeda. 
+Bumi memiliki lapisan-lapisan, yaitu kerak bumi, selimut, dan inti. 
+Bumi memiliki diameter sekitar 12.700 km. 
+Bumi memiliki usia sekitar 4,54 miliar tahun. 
+Bumi memiliki gravitasi yang menarik semua benda menuju pusat Bumi. 
+Bumi memiliki kondisi lingkungan yang cocok untuk ditinggali, seperti kesesuaian udara/ gas, kondisi tanah, ketersediaan air, dan pelindung berupa lapisan ozon. 
+Bumi tidak sepenuhnya bulat, tetapi berbentuk oblate spheroid. 
+Bumi berputar pada porosnya setiap 24 jam, menyebabkan siang dan malam. 
+Bumi bergerak mengelilingi matahari dengan kecepatan 67.000 mil (107.826 km) per jam. </p>
+  </div>
+  
+  <div id="bulket">
+      <p> BULAN <p>Bulan memiliki diameter sekitar 3.476 km, atau sekitar seperempat ukuran Bumi.
+Bulan adalah satu-satunya satelit alami Bumi dan satelit terbesar kelima dalam Tata Surya. 
+Permukaan bulan terdiri dari lava yang mengeras, kawah-kawah besar, gunung-gunung, dan bidang datar yang disebut "seas". 
+Bulan tidak menghasilkan cahayanya sendiri, melainkan mendapatkan cahaya dari matahari. 
+Bulan bergerak perlahan menjauhi Bumi sekitar 3,8 cm setiap tahun. 
+Gravitasi di bulan lebih kecil daripada di Bumi, yaitu 1,62m/s² dibandingkan dengan 9,8m/s² di Bumi. 
+Suhu di bulan dapat mencapai 127°C pada saat matahari menyinari permukaan, sedangkan di malam hari bisa turun hingga -173°C. 
+Bulan tidak memiliki atmosfer, sehingga permukaannya langsung terkena radiasi matahari dan kosmik. 
+Zona waktu
+Bulan memiliki zona waktu sendiri yang tidak mengikuti waktu Bumi. 
+Bulan juga mengalami gempa, yang disebut gempa bulan. Gempa bulan lebih lemah daripada gempa Bumi, tetapi masih bisa bertahan lama. 
+Bulan memiliki kandungan air di bawah permukaannya, meskipun jumlahnya tidak terlalu banyak. </p></p>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
